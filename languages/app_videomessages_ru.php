@@ -3,7 +3,8 @@
 
 $dictionary=array(
 
-'SET_UNSEEN'=>'Отметить как непросмотренное'
+'SET_UNSEEN'=>'Отметить как непросмотренное',
+'RECORD_MESSAGE'=>'Записать сообщение'
 /* end module names */
 
 

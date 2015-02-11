@@ -47,6 +47,7 @@
  [#if MESSAGES#]
 
  <div>
+ <p><a href="app://videomessage" class="btn btn-default"><#LANG_RECORD_MESSAGE#></a></p>
  <table border="0">
   [#begin MESSAGES#]
   <tr>
@@ -58,7 +59,8 @@
  </div>
 
  [#else MESSAGES#]
- <div><#LANG_NO_RECORDS_FOUND#></div>
+ <p><#LANG_NO_RECORDS_FOUND#></p>
+ <p><a href="app://videomessage" class="btn btn-default"><#LANG_RECORD_MESSAGE#></a></p>
  [#endif MESSAGES#]
 
 

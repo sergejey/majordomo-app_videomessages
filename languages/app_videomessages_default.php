@@ -3,7 +3,8 @@
 
 $dictionary=array(
 
-'SET_UNSEEN'=>'Set as unseen'
+'SET_UNSEEN'=>'Set as unseen',
+'RECORD_MESSAGE'=>'Record message'
 /* end module names */
 
 
