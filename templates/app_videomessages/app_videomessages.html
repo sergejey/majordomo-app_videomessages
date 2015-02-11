@@ -1,0 +1,65 @@
+[#if ID!=""#]
+
+<p>
+<a href="?" class="btn btn-default"><#LANG_BACK#></a>
+<a href="?id=[#ID#]&view_mode=set_unseen" class="btn btn-default"><#LANG_SET_UNSEEN#></a>
+<a href="?id=[#ID#]&view_mode=delete_app_videomessages" class="btn btn-default"><#LANG_DELETE#></a>
+</p>
+
+
+  <link rel="stylesheet" type="text/css" href="<#ROOTHTML#>modules/app_videomessages/skin/minimalist.css">
+
+   <style>
+
+   .flowplayer { background-color: #222; background-size: cover;}
+
+   .flowplayer .fp-controls { background-color: rgba(243, 243, 243, 1)}
+   .flowplayer .fp-timeline { background-color: rgba(222, 222, 222, 1)}
+   .flowplayer .fp-progress { background-color: rgba(66, 179, 255, 1)}
+   .flowplayer .fp-buffer { background-color: rgba(155, 158, 161, 1)}
+   .flowplayer.color-light.fixed-controls .fp-controls {background-color: rgba(243, 243, 243, 1)}
+
+   </style>
+
+
+ <script type="text/javascript" src="<#ROOTHTML#>modules/app_videomessages/flowplayer.min.js"></script>
+ &nbsp;
+ <div>
+  <div class="flowplayer fixed-controls no-volume no-mute play-button color-light" align="center" 
+     data-ratio="0.4167" 
+     data-embed="false"
+     data-fullscreen="true"
+     data-flashfit="true"
+     style="display:block;">
+      <video autoplay>
+         <source type="video/mp4" src="<#ROOTHTML#>cms/videomessages/[#FILE#]">
+      </video>
+   </div>
+  </div>
+  &nbsp;<br/>
+
+<a href="<#ROOT_HTML#>cms/videomessages/[#FILE#]" target=_blank>[#FILE#]</a>
+
+
+
+[#else ID#]
+
+ [#if MESSAGES#]
+
+ <div>
+ <table border="0">
+  [#begin MESSAGES#]
+  <tr>
+   <td><a href="?id=[#ID#]"><img src="<#ROOTHTML#>img/icons/playback_play.png" border="0"></a></td>
+   <td[#if IS_NEW="1"#] bgcolor="yellow"[#endif#]><a href="?id=[#ID#]">[#ADDED#]</a></td>
+  </tr>
+  [#end MESSAGES#]
+ </table>
+ </div>
+
+ [#else MESSAGES#]
+ <div><#LANG_NO_RECORDS_FOUND#></div>
+ [#endif MESSAGES#]
+
+
+[#endif ID#]
